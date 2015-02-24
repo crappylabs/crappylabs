@@ -32,9 +32,10 @@ $(document).ready(function() {
     }        
     var counter = 0;
     var profile = '';
-    var _callback = function(response){          
-      
-      if (response.source) {//show candidates                                     
+
+    var _callback = function(response){      
+      if (response.source) {//show candidates    
+        console.log(response);                                 
         var link = response.link;
         profile += '<div class="col-xs-6 col-md-4"><div id='+response.id+' class="candidates">';
         profile += '<a href='+link+' target="_blank"><img src='+response.source+' /><\/a>';
@@ -52,7 +53,7 @@ $(document).ready(function() {
         
       }else{//show likes           
         var totalCount = response.likes.summary.total_count;            
-        $('#'+response.id).append('<p>Likes: <b>'+totalCount+'<\/b><\/p>');
+        $('#'+response.id).append('<div><i class="fa fa-thumbs-o-up" style="color:blue;"></i>  <b>'+totalCount+'</b></div>');
       };
               
     };
