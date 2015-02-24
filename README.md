@@ -11,6 +11,7 @@ Facebook Like Standings is still in its earliest build. Future features are list
 * Direct Like integration
 * Twitter Bootstrap
 * Ranking/Sorting
+* Graphs/Charts
 
 
 #Developer
