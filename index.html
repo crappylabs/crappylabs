@@ -1,23 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Facebook Like Standings</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <title>Facebook Like Standings</title><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    
-    <!-- Optional theme -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script><!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"><!-- Optional theme -->
     <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"-->
-
     <!-- System CSS -->
-    <link rel="stylesheet" href="style.css" >
-
+    <link href="style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +21,7 @@
     <![endif]-->
 
     <script>
-    
+
     var pageAccessToken = {access_token : ''};
 
     $(document).ready(function() {
@@ -52,16 +47,11 @@
                 //set title
                 $('#header').append(response.data[0].from.name + ' Standings');                
                 
-                for(var i=0;i<response.data.length;i++){
-                  //console.log(response.data[i].id);               
-                  showCandidates(response.data[i].id, pageAccessToken);
-                  // showLikeCounts(response.data[i].id, pageAccessToken);
+                for(var i=0;i<response.data.length;i++){                  
+                  showCandidates(response.data[i].id, pageAccessToken);                  
                 }
               });
-              
-              
-                                          
-                      
+                                                                             
             });
 
         var showLikeCounts = function (candidateId, pageAccessToken){             
@@ -80,12 +70,12 @@
           if (response.source) {//show candidates                                     
             var link = response.link;
             profile += '<div class="col-xs-6 col-md-4"><div id='+response.id+' class="candidates">';
-            profile += '<a href='+link+' target="_blank"><img src='+response.source+' /></a>';
-            profile += '</div></div>';
+            profile += '<a href='+link+' target="_blank"><img src='+response.source+' /><\/a>';
+            profile += '<\/div><\/div>';
             counter++;
             if(counter % 3 == 0){
 
-              var row = '<div class="row">'+profile+'</div>';              
+              var row = '<div class="row">'+profile+'<\/div>';              
               $('.container-fluid').append(row); 
               
               //clear profile
@@ -97,26 +87,27 @@
 
           }else{//show likes           
             var totalCount = response.likes.summary.total_count;            
-            $('#'+response.id).append('<p>Likes: <b>'+totalCount+'</b></p>');
+            $('#'+response.id).append('<p>Likes: <b>'+totalCount+'<\/b><\/p>');
           };
                   
         };
-
-
-
       });
 
-    
-    </script>
-  </head>
 
-  <body>
+    </script>
+</head>
+
+<body>
     <h2 id="header"></h2>
-    <div class="container-fluid">      
-    </div>
-    <footer>Facebook Like Standings is developed by Bryan CS (<a href="https://twitter.com/yanzite">@yanzite</a>). | Track project development status at <a href="https://github.com/crappylabs/crappylabs.github.io">Github. </a></footer>
+
+    <div class="container-fluid"></div>
+
+    <footer>
+        Facebook Like Standings is developed by Bryan CS (<a href="https://twitter.com/yanzite">@yanzite</a>). | Track project development status at <a href="https://github.com/crappylabs/crappylabs.github.io">Github.</a>
+    </footer>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>
