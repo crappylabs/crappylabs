@@ -3,15 +3,14 @@
 	margin: 0 auto;
 }
 
-#header{
+#header, .candidates{
 	text-align: center;
 }
-.candidates{
-	display: inline-block;
+.candidates{	
 	margin: 25px;
 }
 
-.candidates img{
+.candidates a img{
 	width: 343px;
 	height: auto;
 }
