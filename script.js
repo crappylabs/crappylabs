@@ -34,17 +34,18 @@ $(document).ready(function() {
     var profile = '';
 
     var _callback = function(response){      
+
       if (response.source) {//show candidates    
-        console.log(response);                                 
         var link = response.link;
         profile += '<div class="col-xs-6 col-md-4"><div id='+response.id+' class="candidates">';
         profile += '<a href='+link+' target="_blank"><img src='+response.source+' /><\/a>';
         profile += '<\/div><\/div>';
         counter++;
+
         if(counter % 3 == 0){
           var row = '<div class="row">'+profile+'<\/div>';              
           $('.container-fluid').append(row); 
-          
+                    
           //clear profile
           profile = '';              
         }
