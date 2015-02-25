@@ -8,7 +8,7 @@ body{
 	z-index: -1;
 
 	display: block;
-	background: url("escalante.jpg") no-repeat center center fixed;
+	background: url("resources/escalante.jpg") no-repeat center center fixed;
 	background-size: cover;
 	width: 100%;
 	height: 800px;
