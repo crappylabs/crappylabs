@@ -39,8 +39,8 @@ $(document).ready(function() {
 
         profile += '<div class="col-xs-6 col-md-4"><div id='+response.id+' class="candidates">';
         profile += '<a href='+link+' target="_blank"><img src='+response.source+' class="img-responsive" /></a>';
-        profile += '<div><i class="fa fa-thumbs-o-up" style="color:blue;"></i>  <b>'+totalCount+'</b></div>';
-        profile += '</div></div>';                      
+        profile += '<div class="label label-primary" style="font-size: 18px; padding-top: 10px; margin-top: 10px"><i class="fa fa-thumbs-o-up" style="color:white;"></i>  <b>'+totalCount+'</b></div>';
+        profile += '</div></div>';                        
         counter++;
         if(counter % 3 == 0){
           var row = '<div class="row">'+profile+'<\/div>';              
