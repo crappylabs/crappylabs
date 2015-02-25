@@ -29,18 +29,18 @@ $(document).ready(function() {
     }
       
     var counter = 0;
-    var profile = '';
+    var profile = '';    
     
 
     var callBack = function(response){    
                 
-        var totalCount = response.likes.summary.total_count;        
+        var totalCount = response.likes.summary.total_count;
         var link = response.link;
 
         profile += '<div class="col-xs-6 col-md-4"><div id='+response.id+' class="candidates">';
         profile += '<a href='+link+' target="_blank"><img src='+response.source+' class="img-responsive" /></a>';
         profile += '<div class="label label-primary" style="font-size: 18px; padding-top: 10px; margin-top: 10px"><i class="fa fa-thumbs-o-up" style="color:white;"></i>  <b>'+totalCount+'</b></div>';
-        profile += '</div></div>';                        
+        profile += '</div></div>';                      
         counter++;
         if(counter % 3 == 0){
           var row = '<div class="row">'+profile+'<\/div>';              
@@ -48,7 +48,6 @@ $(document).ready(function() {
           
           //clear profile
           profile = '';                      
-        }          
-                               
+        }                             
     };
   });
