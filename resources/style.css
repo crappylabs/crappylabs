@@ -38,7 +38,7 @@ body{
 	color: #fff;
 }
 
-#header, .candidates{
+#header, .container-fluid{
 	text-align: center;
 }
 .candidates{	
@@ -61,4 +61,8 @@ img:hover{
 
 footer{
 	text-align: center;	
+}
+
+canvas{
+	margin: 10px 30px;
 }
