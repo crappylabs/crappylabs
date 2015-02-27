@@ -34,14 +34,16 @@ $(document).ready(function() {
     $(document).on('click', '.asc', function(){      
       $(this).siblings('div.profile').remove();
       $('#myPieChart').remove();
+      $('#myDoughnutChart').remove();
       $('.container-fluid').append("<h1 class='loading' style='text-align:center'>Loading...</h1>"); 
       localStorage.order = "asc";      
       fbApi();
     });
 
     $(document).on('click', '.desc', function(){      
-      $(this).siblings('div.profile').remove(); 
-      $('#myDoughnutChart').remove();     
+      $(this).siblings('div.profile').remove();       
+      $('#myPieChart').remove();     
+      $('#myDoughnutChart').remove(); 
       $('.container-fluid').append("<h1 class='loading' style='text-align:center'>Loading...</h1>"); 
       localStorage.order = "desc";      
       fbApi();
