@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.asc', function(){      
       $(this).siblings('div.profile').remove();
-      $('#myChart').remove();
+      $('#myPieChart').remove();
       $('.container-fluid').append("<h1 class='loading' style='text-align:center'>Loading...</h1>"); 
       localStorage.order = "asc";      
       fbApi();
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.desc', function(){      
       $(this).siblings('div.profile').remove(); 
-      $('#myChart').remove();     
+      $('#myDoughnutChart').remove();     
       $('.container-fluid').append("<h1 class='loading' style='text-align:center'>Loading...</h1>"); 
       localStorage.order = "desc";      
       fbApi();
